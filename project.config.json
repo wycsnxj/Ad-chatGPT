@@ -1,0 +1,12 @@
+{
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "autoCompile": true
+    },
+    "appid": "tt0ef8784591c7480801",
+    "projectname": "chatGPT"
+}
