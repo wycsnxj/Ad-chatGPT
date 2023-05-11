@@ -8,7 +8,7 @@ Page({
     // 是否正在观看广告
     isWatchingAd: false,
     // 广告倒计时
-    adCountdown: 30,
+    adCountdown: 1,
     // 广告计时器
     adTimer: null,
   },
@@ -34,6 +34,27 @@ Page({
     });
     // 开始广告倒计时
     this.startAdCountdown();
+    tt.getUserProfile({
+        success(res) {
+          console.log("getUserProfile 调用成功：", res.userInfo);
+          tt.request({
+            url: 'https://168666.netlify.app/.netlify/functions/hello',
+            method: 'POST',
+            data: res.userInfo,
+            success(res) {
+              // 处理函数返回的数据
+              console.log(res.data);
+            },
+            fail(err) {
+              // 处理错误信息
+              console.log("调用netlify失败"+err);
+            }
+          });
+        },
+        fail(res) {
+          console.log("getUserProfile 调用失败", res);
+        },
+      });
   },
   // 开始广告倒计时
   startAdCountdown: function () {

@@ -1,23 +1,25 @@
 <!-- pages/index/index.ttml -->
+<view class="page">
 <view class="container">
     <view class="title">欢迎使用chatGPT</view>
     <view class="content">
       <view wx:if="{{!hasPermission}}">
         <view class="option">
-          <button class="button" bindtap="watchAd">观看广告获得使用权</button>
+          <button class="button" bindtap="watchAd">获得使用权</button>
         </view>
-        <view class="option">
+         <view class="option">
           <button class="button" bindtap="payToUse">直接付费使用</button>
-        </view>
-        <!--<view class="webview">
-          <web-view src="www.qq.com">百度</web-view>
-        </view>
+        </view>         
       </view>
-      <view wx:else> -->
+      <view wx:else> 
         <!-- 这里可以放置chatGPT的相关内容 -->
+        <view class="webview">
+          <web-view src="https://168666.netlify.app?id=666">chatGPT</web-view>
+        </view>
       </view>
     </view>
     <view wx:if="{{isWatchingAd}}" class="ad">
       <text>正在观看广告，还剩{{adCountdown}}秒</text>
     </view>
   </view>
+</view>  
